@@ -1,0 +1,25 @@
+services:
+  hoot-api-gateway:
+    image: hoot-api-gateway
+    ports: 
+      - 8004:8004
+    container_name: hoot-api-gateway-composed
+    depends_on:
+      - hoot-api-people
+      - hoot-api-posts
+      - hoot-api-teams
+  hoot-api-people:
+    image: hoot-api-people
+    ports: 
+      - 8001:8001
+    container_name: hoot-api-people-composed
+  hoot-api-posts:
+    image: hoot-api-posts
+    ports: 
+      - 8002:8002
+    container_name: hoot-api-posts-composed
+  hoot-api-teams:
+    image: hoot-api-teams
+    ports: 
+      - 8003:8003
+    container_name: hoot-api-teams-composed
