@@ -43,6 +43,6 @@ services:
     container_name: hoot-message-queues-composed
     healthcheck:
       test: rabbitmq-diagnostics check_port_connectivity
-      interval: 1s
+      interval: 2s
       timeout: 3s
       retries: 10
