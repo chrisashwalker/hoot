@@ -42,3 +42,9 @@
 ```
 docker compose up -d
 ```
+
+
+
+RabbitMQ usage:
+Failure to connect to API, Notification upon delayed response, Updating links upon deletions
+docker pull rabbitmq
