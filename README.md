@@ -22,7 +22,7 @@
 - [ ] Tailwind CSS
 - [ ] Next.js
 - [x] Node.js
-- [ ] RabbitMQ
+- [x] RabbitMQ
 - [ ] Azure Cloud Services
 
 ## Microservices
@@ -38,13 +38,19 @@
 - Clone the microservice repositories
 - Build Docker images as per instructions for each repository
 - Clone the API gateway repository
+- Pull the Docker image for RabbitMQ, with:
+```
+docker pull rabbitmq:3-management-alpine
+```
 - Run instances of the microservices and the API gateway using the Docker Compose configuration in this repository, with the command:
 ```
 docker compose up -d
 ```
 
-
-
-RabbitMQ usage:
-Failure to connect to API, Notification upon delayed response, Updating links upon deletions
-docker pull rabbitmq
+## Next steps for development
+- Set up RabbitMQ for messaging, including: 
+  - Queuing requests upon failure to connect to APIs
+  - Send notifications upon completion of pending requests
+  - Update links database upon deletion of people, posts or teams
+- Set up databases
+- Build frontend
