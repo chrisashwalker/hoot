@@ -11,19 +11,19 @@
 - [x] NestJS
 - [x] Express JS
 - [x] Docker
-- [] Entity Framework
-- [] Spring Data
-- [] SQLAlchemy
-- [] PostgreSQL
-- [] MongoDB
-- [] Redis
+- [ ] Entity Framework
+- [ ] Spring Data
+- [ ] SQLAlchemy
+- [ ] PostgreSQL
+- [ ] MongoDB
+- [ ] Redis
 - [x] Typescript
-- [] React
-- [] Tailwind CSS
-- [] Next.js
+- [ ] React
+- [ ] Tailwind CSS
+- [ ] Next.js
 - [x] Node.js
-- [] RabbitMQ
-- [] Azure Cloud Services
+- [ ] RabbitMQ
+- [ ] Azure Cloud Services
 
 ## Microservices
 - [hoot-api-people](https://github.com/chrisashwalker/hoot-api-people)
