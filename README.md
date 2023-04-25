@@ -38,7 +38,6 @@
 - Clone the microservice repositories
 - Clone the API gateway repository
 - Build Docker images as per instructions for each repository
-```
 - Run instances of the microservices and the API gateway using the Docker Compose configuration in this repository, with the command:
 ```
 docker compose up -d
