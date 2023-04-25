@@ -20,21 +20,33 @@ services:
     ports: 
       - 8001:8001
     container_name: hoot-api-people-composed
+    depends_on:
+      hoot-message-queues:
+        condition: service_healthy
   hoot-api-posts:
     image: hoot-api-posts
     ports: 
       - 8002:8002
     container_name: hoot-api-posts-composed
+    depends_on:
+      hoot-message-queues:
+        condition: service_healthy
   hoot-api-teams:
     image: hoot-api-teams
     ports: 
       - 8003:8003
     container_name: hoot-api-teams-composed
+    depends_on:
+      hoot-message-queues:
+        condition: service_healthy
   hoot-api-links:
     image: hoot-api-links
     ports: 
       - 8004:8004
     container_name: hoot-api-links-composed
+    depends_on:
+      hoot-message-queues:
+        condition: service_healthy
   hoot-message-queues:
     image: rabbitmq:3-management-alpine
     ports: 

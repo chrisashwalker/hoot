@@ -44,6 +44,5 @@ docker compose up -d
 ```
 
 ## Next steps for development
-- Use RabbitMQ messaging to update the links database upon deletion of people, posts or teams
 - Set up databases
 - Build frontend
