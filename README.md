@@ -44,5 +44,7 @@ docker compose up -d
 ```
 
 ## Next steps for development
+- Post team deletions
+- Fix duplicate deleted-requests consumer bug
 - Set up databases
 - Build frontend
