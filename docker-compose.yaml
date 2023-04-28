@@ -18,9 +18,11 @@ services:
       - 8008:5432
     container_name: hoot-db-postgres-composed
     environment:
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=guest
+      - POSTGRES_DB=hoot
     healthcheck:
-      test: pg_isready
+      test: pg_isready -U postgres
       interval: 1s
       timeout: 5s
       retries: 10
