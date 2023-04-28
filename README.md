@@ -14,10 +14,10 @@
 - [x] Node.js
 - [x] Docker
 - [x] RabbitMQ
-- [ ] Entity Framework
+- [x] PostgreSQL
+- [x] Entity Framework
 - [ ] Spring Data
 - [ ] SQLAlchemy
-- [ ] PostgreSQL
 - [ ] MongoDB
 - [ ] Redis
 - [ ] React
