@@ -8,21 +8,21 @@
 - [x] Python 3
 - [x] Flask
 - [x] Javascript
+- [x] Typescript
 - [x] NestJS
 - [x] Express JS
+- [x] Node.js
 - [x] Docker
+- [x] RabbitMQ
 - [ ] Entity Framework
 - [ ] Spring Data
 - [ ] SQLAlchemy
 - [ ] PostgreSQL
 - [ ] MongoDB
 - [ ] Redis
-- [x] Typescript
 - [ ] React
 - [ ] Tailwind CSS
 - [ ] Next.js
-- [x] Node.js
-- [x] RabbitMQ
 - [ ] Azure Cloud Services
 
 ## Microservices
@@ -42,7 +42,3 @@
 ```
 docker compose up -d
 ```
-
-## Next steps for development
-- Set up databases
-- Build frontend
