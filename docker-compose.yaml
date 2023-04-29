@@ -46,6 +46,23 @@ services:
     depends_on:
       hoot-message-queues:
         condition: service_healthy
+      hoot-db-postgres:
+        condition: service_healthy
+
+  hoot-db-mongo:
+    image: mongo
+    ports:
+      - 8009:27017
+    container_name: hoot-db-mongo-composed
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=guest
+      - DB_NAME=hoot
+    healthcheck:
+      test: mongosh --eval 'db.runCommand("ping").ok' --quiet
+      interval: 1s
+      timeout: 5s
+      retries: 10
 
   hoot-api-teams:
     image: hoot-api-teams
@@ -54,6 +71,8 @@ services:
     container_name: hoot-api-teams-composed
     depends_on:
       hoot-message-queues:
+        condition: service_healthy
+      hoot-db-mongo:
         condition: service_healthy
 
   hoot-api-links:

@@ -16,10 +16,11 @@
 - [x] RabbitMQ
 - [x] PostgreSQL
 - [x] Entity Framework
-- [ ] Spring Data
-- [ ] SQLAlchemy
-- [ ] MongoDB
+- [x] Spring Data
+- [x] MongoDB
+- [x] PyMongo
 - [ ] Redis
+- [ ] Redis OM
 - [ ] React
 - [ ] Tailwind CSS
 - [ ] Next.js
@@ -42,3 +43,9 @@
 ```
 docker compose up -d
 ```
+
+## Developer todos:
+- Implement redis
+- Fix Gateway endpoints, following db implementation
+- Build frontend
+- Deploy
