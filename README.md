@@ -19,8 +19,7 @@
 - [x] Spring Data
 - [x] MongoDB
 - [x] PyMongo
-- [ ] Redis
-- [ ] Redis OM
+- [x] Mongoose
 - [ ] React
 - [ ] Tailwind CSS
 - [ ] Next.js
@@ -45,7 +44,6 @@ docker compose up -d
 ```
 
 ## Developer todos:
-- Implement redis
 - Fix Gateway endpoints, following db implementation
 - Build frontend
 - Deploy

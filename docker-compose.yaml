@@ -1,10 +1,9 @@
 services:
 
   hoot-message-queues:
-    image: rabbitmq:3-management-alpine
+    image: rabbitmq:alpine
     ports: 
       - 8006:5672
-      - 8007:15672
     container_name: hoot-message-queues-composed
     healthcheck:
       test: rabbitmq-diagnostics check_port_connectivity
@@ -13,7 +12,7 @@ services:
       retries: 10
 
   hoot-db-postgres:
-    image: postgres:latest
+    image: postgres:alpine
     ports:
       - 8008:5432
     container_name: hoot-db-postgres-composed
