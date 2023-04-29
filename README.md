@@ -1,7 +1,7 @@
 # 🦉 Hoot
 🌱 A tiny Human Resources management system, consisting of microservices, utilising RESTful HTTP and AMQP protocols to communicate.
 
-💡 This is a hobby project, not for production, designed with the intention to enable practice with a varied tech stack, including:
+💡 This is a hobby project, commencing April 2023. It is not designed for production, but is to enable practice with a varied tech stack, including:
 - [x] C# .NET 7
 - [x] Java 17
 - [x] Spring Boot
