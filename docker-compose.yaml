@@ -6,10 +6,10 @@ services:
       - 8006:5672
     container_name: hoot-message-queues-composed
     healthcheck:
-      test: rabbitmq-diagnostics check_port_connectivity
-      interval: 2s
-      timeout: 3s
-      retries: 10
+      test: rabbitmq-diagnostics check_port_connectivity || exit 1
+      interval: 5s
+      timeout: 2s
+      retries: 3
 
   hoot-db-postgres:
     image: postgres:alpine
@@ -21,10 +21,25 @@ services:
       - POSTGRES_PASSWORD=guest
       - POSTGRES_DB=hoot
     healthcheck:
-      test: pg_isready -U postgres
-      interval: 1s
-      timeout: 5s
-      retries: 10
+      test: pg_isready -U postgres || exit 1
+      interval: 5s
+      timeout: 2s
+      retries: 3
+
+  hoot-db-mongo:
+    image: mongo
+    ports:
+      - 8009:27017
+    container_name: hoot-db-mongo-composed
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=guest
+      - DB_NAME=hoot
+    healthcheck:
+      test: mongosh --eval 'db.runCommand("ping").ok' --quiet || exit 1
+      interval: 5s
+      timeout: 2s
+      retries: 3
 
   hoot-api-people:
     image: hoot-api-people
@@ -48,20 +63,6 @@ services:
       hoot-db-postgres:
         condition: service_healthy
 
-  hoot-db-mongo:
-    image: mongo
-    ports:
-      - 8009:27017
-    container_name: hoot-db-mongo-composed
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=guest
-      - DB_NAME=hoot
-    healthcheck:
-      test: mongosh --eval 'db.runCommand("ping").ok' --quiet
-      interval: 1s
-      timeout: 5s
-      retries: 10
 
   hoot-api-teams:
     image: hoot-api-teams
@@ -82,6 +83,8 @@ services:
     depends_on:
       hoot-message-queues:
         condition: service_healthy
+      hoot-db-mongo:
+        condition: service_healthy
 
   hoot-api-gateway:
     image: hoot-api-gateway
@@ -89,6 +92,8 @@ services:
       - 8005:8005
     container_name: hoot-api-gateway-composed
     depends_on:
+      hoot-message-queues:
+        condition: service_healthy
       hoot-api-people:
         condition: service_started
       hoot-api-posts:
@@ -97,5 +102,3 @@ services:
         condition: service_started
       hoot-api-links:
         condition: service_started
-      hoot-message-queues:
-        condition: service_healthy
