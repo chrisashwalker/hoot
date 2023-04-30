@@ -64,7 +64,6 @@ services:
       hoot-db-postgres:
         condition: service_healthy
 
-
   hoot-api-teams:
     image: hoot-api-teams
     ports: 

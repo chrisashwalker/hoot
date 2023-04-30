@@ -24,6 +24,12 @@
 - [ ] Tailwind CSS
 - [ ] Next.js
 - [ ] Azure Cloud Services
+  
+___
+
+![System diagram](diagram_architecture.drawio.png)
+
+___
 
 ## Microservices
 - [hoot-api-people](https://github.com/chrisashwalker/hoot-api-people)
