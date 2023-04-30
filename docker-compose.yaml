@@ -1,9 +1,10 @@
 services:
 
   hoot-message-queues:
-    image: rabbitmq:alpine
+    image: rabbitmq:management-alpine
     ports: 
       - 8006:5672
+      - 8007:15672
     container_name: hoot-message-queues-composed
     healthcheck:
       test: rabbitmq-diagnostics check_port_connectivity || exit 1

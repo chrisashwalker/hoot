@@ -42,8 +42,3 @@
 ```
 docker compose up -d
 ```
-
-## Developer todos:
-- Fix Gateway endpoints, following db implementation
-- Build frontend
-- Deploy
